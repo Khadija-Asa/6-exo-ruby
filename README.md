@@ -1,6 +1,6 @@
 # 6-exo-ruby
 
-## Exo 1 - Le palindrone
+## Exo 1 - Le palindrome
 Le script Ruby permettra de saisir un mot et de vérifier que ce mot est un palindrome.
 Le retour de code se fera comme suit :
 Le mot mot saisie est un palindrome
