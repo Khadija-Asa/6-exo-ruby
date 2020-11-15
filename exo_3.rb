@@ -4,23 +4,24 @@
 #Bonjour Nom # *ET QUE* si les 2 sont fournis
 
 puts 'Veuillez entrer votre surnom'
-surnom = gets.chomp
+nickname = gets.chomp
 
 puts 'Veuillez entrer votre nom'
-nom = gets.chomp
+name = gets.chomp
 
-def bonjour (surnom, nom)
+def bonjour (nickname, name)
 
-	if surnom != '' && nom == ''
-	
-		puts 'hello'
-
-  elsif surnom == '' && nom != ''
-	
-		puts 'bonjour'
-
-	elsif surnom != '' && nom != ''
+	if nickname != '' && name == '' #si surnom différent de vide et nom vide
 		
-		puts 'salut'
-end
+		puts 'Hello ' + nickname #on renvoi Hello + surnom
+		
+  elsif nickname == '' && name != '' #si surnom vide et nom différent de vide
+		
+		puts 'Bonjour ' + name #on renvoi Bonjour + nom
+		
+	elsif nickname != '' && name != '' #si surnom et nom différent de vide
+		
+		puts 'Bonjour ' + name #on renvoi Bonjour + nom
+
+	end
 end
