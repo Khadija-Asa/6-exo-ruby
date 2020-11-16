@@ -20,3 +20,16 @@ puts "#{i} * #{number} = #{number * i}" #calcul selon le chiffre qui sera écrit
 # puts i
 
   end
+
+# demande à l'utilsateur de saisir un chiffre
+# attention, l'utilsateur est en droit, de mettre n'importe quoi à ce stade
+# il faudrait vérifier à la saisie qu'il s'agisse bien d'un nombre d'un chiffre sans lettres
+puts 'Saisir votre mot'
+number = gets.chomp.to_i
+
+# on effectue une boucle de 1 à 10
+# on affihe la phrase comme demandée
+# pas besoin de méthode ici
+(1..10).each do |n|
+  puts "#{n} * #{number} = #{n * number}"
+end
