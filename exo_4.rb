@@ -32,3 +32,24 @@ while marks != 'stop' #boucle, tant que les notes sont différents de 'stop'
 #   return marks.reduce(:+) / marks.length
 # end
 # puts get_average(get_note())
+
+numbers = []
+puts 'entez vos notes, pour arrêter la saisie en tapant STOP'
+note = ''
+
+until note.eql? 'STOP'
+  note = gets.chomp
+  numbers.push note.to_i unless note.eql? 'STOP'
+end
+
+puts "Vous avez saisie #{numbers.count} notes"
+puts "La moyenne de vos notes est de #{numbers.reduce(:+) / numbers.count} / 20"
+
+# 1ere variante
+puts 'entez vos notes séparé par un espace, puis validez'
+notes = gets.chomp
+puts "Vous avez saisie #{notes.split(' ').count} notes"
+puts "La moyenne de vos notes est de #{notes.split(' ').map(&:to_i).reduce(:+) / notes.split(' ').count} / 20"
+
+# 2eme variante
+# KDO je vous laisse imaginer 
