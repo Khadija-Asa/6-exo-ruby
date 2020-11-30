@@ -18,3 +18,31 @@
 #(A =1, A= 2….  b=2 B=4)
 #*Attention* cette modification devra permettre d’utiliser l’une ou l’autre façon de compter.
 
+# on va déjà préparer le poids de chaque lettre
+# a b c d e f g h i j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+# 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+# 1 2 3 4 5 6 7 8 9 1  2  3  4  5  6  7  8  9  2  2  3  4  5  6  7  8
+# abcdefghijklmnopqrstuvwxyz
+# 12345678912345678922345678
+
+# une fois, ce travail effectué, il va falloir récupérer la saisie d'un mot
+puts 'saisir un mot'
+word = gets.chomp.downcase
+
+weight = word.tr('abcdefghijklmnopqrstuvwxyz', '12345678912345678922345678')
+
+# on va forcement récupurer un nombre du genre '41294'
+# qu'il va falloir additionner, (comme dans l'exercice 4)
+# dans notre cas on obient '20'
+# il faudra donc faire 2 + 0 pour obtenir un nombre de 1 chiffre
+
+# pour cela utiliser une boucle peu devenir interressant
+
+def split_and_sum number
+  return number if number.to_s.split('').size.eql? 1
+  # on a un nombre à spliter et à additionner
+  split_and_sum number.to_s.split('').map(&:to_i).reduce(:+)
+end
+
+sum = split_and_sum weight
+puts "Le poids du mot est de #{sum}"
